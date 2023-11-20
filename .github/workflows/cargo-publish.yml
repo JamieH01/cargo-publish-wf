@@ -1,0 +1,13 @@
+name: cargo publish
+run-name: cargo test/publish
+on: [push]
+jobs:
+  test-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4     
+      - name: test
+        run: cargo test
+      - name: publish
+        run: cargo publish
